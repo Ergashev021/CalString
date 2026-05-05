@@ -31,5 +31,7 @@ for (int i =1; i < misol.Length+1; i+2);
         }
         
     }
+
 }
+Console.WriteLine("Natija : " + result);
 
