@@ -6,6 +6,9 @@
 
 **Ushbu repository ketma ket turli sonlar kiritiladi va yuqoridagi amallardan foydalanib bajariladi hamda natijani qaytaradi**
  
+ # Dastur natijasi 
+ ![LogoP](images1/Анимация.gif)
+ 
 
 
 
