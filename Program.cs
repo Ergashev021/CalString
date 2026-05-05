@@ -1,37 +1,25 @@
-﻿Console.WriteLine("Birnechta sonlar ustida amallar ");
+﻿Console.Write("Birnechta sonlar ustida amallar:");
 string misol = Console.ReadLine();
-int result = 0;
-char son = misol[0];
-char amal = misol[1];
 
+int result = misol[0] - '0';
 
-for (int i =1; i < misol.Length+1; i+2);
+for (int i = 1; i < misol.Length; i += 2)
 {
-    for (int j = 0; j < misol.Length+1;j+2)
+    char amal = misol[i];
+    int son = misol[i + 1] - '0';
+
+    if (amal == '+')
+        result += son;
+    else if (amal == '-')
+        result -= son;
+    else if (amal == '*')
+        result *= son;
+    else if (amal == '/')
+        result /= son;
+    else
     {
-        if (misol[i] == "+")
-        {
-            result += misol[j];
-        }
-        else if(misol[i] == "-")
-        {
-            result-= misol[j];
-        }
-          else if(misol[i] == "*")
-        {
-            result *= misol[j];
-        }
-          else if(misol[i] == "/")
-        {
-            result /= misol[j];
-        }
-        else
-        {
-            Console.WriteLine("Natija Chiqmadi ");
-        }
-        
-    }
-
+        Console.WriteLine("Manfiy va musbat sonlarga ishlamaydi ");
+    }   
 }
-Console.WriteLine("Natija : " + result);
 
+Console.WriteLine("Natija: " + result);
