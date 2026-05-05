@@ -18,7 +18,7 @@ for (int i = 1; i < misol.Length; i += 2)
         result /= son;
     else
     {
-        Console.WriteLine("Manfiy va musbat sonlarga ishlamaydi ");
+        Console.WriteLine("Manfiy  sonlarga ishlamaydi ");
     }   
 }
 
