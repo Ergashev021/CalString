@@ -1,15 +1,26 @@
-﻿using System.Diagnostics.Metrics;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks.Dataflow;
-
-Console.Write("Birnechta  amallar \n\t 1: Bir xonalik sonlar ustida \n\t 2: Bir nechta xonalik sonlar ustida \n\t 3:Tartib hisoblash ");
-string str = Console.ReadLine();
-int userInput = Convert.ToInt32(str);
-switch (userInput)
+﻿string userChoice = string.Empty;
+do
 {
-    case 1:
-        {
-            Console.Write("Birnechta sonlar ustida amallar:");
+    Console.Write("Bir nechta sonlar ustida amallar \n \t 1: Bir xonalik sonlar ustida amallar \n\t 2: Turlik xonalik sonlar ustida amallar ");
+    string str = Console.ReadLine();
+    int userInput = Convert.ToInt32(str);
+    switch (userInput)
+    {
+        case 1:
+            {
+                BirXonalikSonlar();
+                break;
+            }
+        case 2:
+            {
+                IkkiXonalik();
+                break;
+            }
+    }
+}while(userChoice.ToLower()=="Yes");
+static void BirXonalikSonlar()
+{
+    Console.Write("Bir xonalik sonlar ustida amallar:");
             string misol = Console.ReadLine();
 
             int result = misol[0] - '0';
@@ -33,12 +44,11 @@ switch (userInput)
                 }   
             }
 
-            Console.WriteLine("Natija: " + result);
-            break;
-        }
-    case 2:
-        {
-            Console.Write("Misol kiriting: ");
+    Console.WriteLine("Natija: " + result);
+}
+static void IkkiXonalik()
+{
+    Console.Write("Misol kiriting: ");
             string misol = Console.ReadLine();
 
             int result = 0;
@@ -67,61 +77,5 @@ switch (userInput)
                     son = 0;
                 }
             }
-            Console.WriteLine("Natija: " + result);
-        
-            break;
-        }
-        case 3:
-        {
-            // shufrlangan ma'lumot kriitadi uni ichida raqamlar va 
-            //belgilardan tashkil topadi shularni raqamlarni ajratish kerak 
-            // bizga kerak malumot kamida ikki marta takrorlangan 
-            //shular  bziga kerak bolgan raqamlar shularni ajratib olishimiz kerak 
-            Console.Write("Ma'lumotni kiriting : ");
-            string matn = Console.ReadLine();
-            string result = IsDigit(matn);
-            string result1 = Info(result);
-            Console.WriteLine("Natija : " + result1);
-
-            break;
-        }
-} 
-static string IsDigit(string text)
-{
-    string res ="";
-    for (int i =0;i<text.Length;i++)
-    {
-        if (char.IsDigit(text[i]))
-        {
-            res +=text[i];
-        }
-    }
-    return res;
+    Console.WriteLine("Natija: " + result);
 }
-static string Info(string num)
-{
-    string res1 ="";
-    for (int i = 0; i < num.Length; i++)
-    {
-        
-        int counter =0;
-        if (char.IsDigit(num[i]))
-        {
-            for (int j = 0; j < num.Length; j++)
-            {
-                if (num[i] == num[j])
-                {
-                    counter++;
-                }
-            }
-        }
-         if (counter > 1 && !res1.Contains(num[i]))
-        {
-            res1 += num[i];
-        }
-            
-    }
-    return res1;
-}
-
-
